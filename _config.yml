@@ -20,7 +20,7 @@ title                    : "Error Correction"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Jerry Wu"
-description              : "This is for testing"
+description              : "Made by a handsome guy"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -96,8 +96,8 @@ author:
   name             : "Jerry Wu"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  location         : "Shanghai Qibaodwight"
+  email            : "ywu_jerry@qibaodwight.org"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -279,3 +279,15 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+    
+     
+      
+      
+      
