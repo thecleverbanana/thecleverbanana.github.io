@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Jerry"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/正面2.jpg"
   bio              : "This is made by a clever boy"
   location         : "Shanghai Qibaodwight"
   email            : "ywu_jerry@qibaodwight.org"
