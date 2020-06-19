@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "About"
-    url: /about/
+    url: /About/
   - title: "Banana Branch"
-    url: /bananabranch/
+    url: /Banana-Branch/
 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
