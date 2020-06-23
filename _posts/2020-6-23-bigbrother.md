@@ -1,5 +1,5 @@
 ---
-title: " Big Brother' Project : News"
+title: " The First Trial Post"
 date: 2020-6-23
 tags: [python, java, news]
 header: 
@@ -51,9 +51,9 @@ public static void main(string[] args){
 ```
 Here's an image:
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/乌托邦/linsep.jpg" alt="linearly separable data">
+<img src="{{ site.url }}{{ site.baseurl }}/images/壁纸4/linsep.jpg" alt="linearly separable data">
 
 Here's another image:
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/乌托邦/linsep.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/images/壁纸4/linsep.jpg)
 
