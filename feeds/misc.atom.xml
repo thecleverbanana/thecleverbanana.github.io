@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The_Clever_Banana - misc</title><link href="thecleverbanana.github.io/" rel="alternate"></link><link href="thecleverbanana.github.io/feeds/misc.atom.xml" rel="self"></link><id>thecleverbanana.github.io/</id><updated>2020-06-23T00:00:00+08:00</updated><entry><title>" The First Trial Post"</title><link href="thecleverbanana.github.io/the-first-trial-post.html" rel="alternate"></link><published>2020-06-23T00:00:00+08:00</published><updated>2020-06-23T00:00:00+08:00</updated><author><name>LULULU</name></author><id>tag:None,2020-06-23:thecleverbanana.github.io/the-first-trial-post.html</id><summary type="html">&lt;h1&gt;H1 Welcome)to the clever banana&lt;/h1&gt;
+&lt;h2&gt;H2 LULULU&lt;/h2&gt;
+&lt;p&gt;Here's some basic text&lt;/p&gt;
+&lt;p&gt;And here's some &lt;em&gt;italics&lt;/em&gt; text&lt;/p&gt;
+&lt;p&gt;Here's some &lt;strong&gt;bold&lt;/strong&gt; text&lt;/p&gt;
+&lt;p&gt;What about a &lt;a href="https://en.wikipedia.org/wiki/Main_Page"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here's a bulleted list:
+* First item
++ Second item
+- Third item&lt;/p&gt;
+&lt;p&gt;Here's a numbered list:
+1. Peace
+2. And
+3. Love&lt;/p&gt;
+&lt;p&gt;Python code block:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# this is …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;H1 Welcome)to the clever banana&lt;/h1&gt;
+&lt;h2&gt;H2 LULULU&lt;/h2&gt;
+&lt;p&gt;Here's some basic text&lt;/p&gt;
+&lt;p&gt;And here's some &lt;em&gt;italics&lt;/em&gt; text&lt;/p&gt;
+&lt;p&gt;Here's some &lt;strong&gt;bold&lt;/strong&gt; text&lt;/p&gt;
+&lt;p&gt;What about a &lt;a href="https://en.wikipedia.org/wiki/Main_Page"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here's a bulleted list:
+* First item
++ Second item
+- Third item&lt;/p&gt;
+&lt;p&gt;Here's a numbered list:
+1. Peace
+2. And
+3. Love&lt;/p&gt;
+&lt;p&gt;Python code block:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# this is the program for testing the format function&lt;/span&gt;
+
+    &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello, &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;The answer is &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Java code block:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;This is a java project&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here's an image:&lt;/p&gt;
+&lt;p&gt;&lt;img src="{{ site.url }}{{ site.baseurl }}/images/壁纸4.jpg" alt="linearly separable data"&gt;&lt;/p&gt;
+&lt;p&gt;Here's another image:&lt;/p&gt;
+&lt;p&gt;&lt;img alt src="{{ site.url }}{{ site.baseurl }}/images/壁纸4.jpg"&gt;&lt;/p&gt;</content><category term="misc"></category><category term="[python"></category><category term="java"></category><category term="news]"></category></entry></feed>
