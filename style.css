@@ -1,0 +1,95 @@
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+nav {
+  margin-bottom: 0rem;
+  gap: 10.5rem;
+}
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #2563eb;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background: #f6f8fa;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+img.profile-photo {
+  width: 180px;        /* adjust size */
+  height: 180px;       /* keep square for circle */
+  object-fit: cover;   /* crop nicely */
+  border-radius: 10%;  /* circle */
+  display: block;
+  /* float: left; */
+  margin: 1rem 1rem 1rem 0;;   /* left aligned */
+}
+
+.pub-entry {
+  display: flex;            
+  align-items: flex-start; 
+  gap: 1rem;               
+  margin: 0.5rem 0;
+}
+
+.pub-image {
+  width: 200px;             
+  border-radius: 0px;
+}
+
+.pub-text {
+  flex: 1;                 
+  line-height: 1;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.01rem;
+}
+
+.pub-authors {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.01rem;
+}
+
+.pub-links a {
+  margin-right: 12px;
+  color: #2563eb;
+  text-decoration: none;
+}
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.last-update {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 2rem;
+  text-align: right;
+  font-style: italic;
+}
+
+
+
