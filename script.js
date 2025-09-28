@@ -2,8 +2,14 @@
 async function loadPage(file) {
   const el = document.getElementById("content");
   try {
-    const res = await fetch("content/" + file, { cache: "no-store" });
-    if (!res.ok) throw new Error(res.status + " " + res.statusText);
+    const base = new URL("./content/", window.location.href);
+    const url = new URL(file, base);
+    // 调试期加个时间戳避免 CDN 旧缓存；正式可去掉
+    url.searchParams.set("_", Date.now().toString());
+
+    const res = await fetch(url.toString(), { cache: "no-store" });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText} @ ${res.url}`);
+
     const md = await res.text();
     el.innerHTML = marked.parse(md);
 
@@ -12,13 +18,12 @@ async function loadPage(file) {
     document.documentElement.classList.toggle("is-portfolio", isPortfolio);
 
     insertLastUpdate(el);
-
-    // 仅当当前内容里存在 .quilt 时才初始化作品集交互
     if (el.querySelector(".quilt")) initPortfolioInteractions(el);
   } catch (err) {
     el.innerHTML = `<p style="color:red;">Failed to load ${file}: ${err.message}</p>`;
   }
 }
+
 
 function insertLastUpdate(container) {
   const footer = document.createElement("p");
