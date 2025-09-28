@@ -99,8 +99,119 @@ body.is-portfolio h1 {
   background: rgba(0,0,0,0.5); color: #fff; opacity: 0; transition: opacity 180ms ease;
 }
 .tile .overlay-inner { text-align: center; padding: 0 1rem; }
-.tile .overlay h3 { margin: 0 0 0.25rem 0; font-size: 1.05rem; }
-.tile .overlay p { margin: 0; font-size: 0.9rem; }
-.tile:hover .overlay { opacity: 1; cursor: pointer; }
-.tile[data-target] { cursor: pointer; }
+.tile .overlay h3 {
+  margin: 0.1rem 0 0.1rem 0;   /* 底部只给一点点间距 */
+  font-size: 1.05rem;
+  line-height: normal;
+}
 
+.tile .overlay h5 {
+  margin: 0 0 0.3rem 0;         /* 上边贴近 h3，下边比 h3 多一些 */
+  font-size: 0.95rem;
+  line-height: normal;
+}
+
+.tile .overlay p {
+  margin: 0.15rem 0;             /* 保持和 h5 的下边距协调 */
+  font-size: 0.9rem;
+  line-height: normal;
+}
+.tile:hover .overlay { opacity: 1; cursor: pointer; }
+.tile { cursor: pointer; }
+
+/* 展开卡片：占满一行，按内容高度过渡 */
+.tile-expander {
+  grid-column: 1 / -1;
+  background: #111;
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  overflow: hidden;
+  max-height: 0;            /* 初始为 0 */
+  opacity: 1;               /* 仅用高度过渡，更直观 */
+  transition: max-height .35s ease;
+  will-change: max-height;
+}
+.tile-expander.is-open {
+  /* 打开时的具体高度由 JS 设置为 scrollHeight，这里无需再写固定值 */
+}
+/* 内部布局 */
+.tile-expander .expander-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+/* 无媒体时用单列布局并隐藏媒体区 */
+.tile-expander.no-media .expander-inner {
+  grid-template-columns: 1fr;
+}
+.tile-expander.no-media .expander-media {
+  display: none;
+}
+@media (max-width: 720px){
+  .tile-expander .expander-inner { grid-template-columns: 1fr; }
+}
+/* 高亮当前被展开的 tile（与展开区颜色一致） */
+.tile.is-active { 
+  outline: 2px solid #2a2a2a;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* 高亮时让遮罩常显、颜色接近 .tile-expander 的背景 #111 */
+.tile.is-active .overlay {
+  opacity: 1;
+  background: rgba(17,17,17,.66);
+}
+
+/* 悬停时保持不变（避免抖动） */
+.tile.is-active:hover .overlay { opacity: 1; }
+.expander-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.expander-body h3 { margin: 0 0 .25rem 0; font-size: 1.15rem; }
+.expander-body .meta { margin: 0 0 .75rem 0; opacity: .7; }
+.expander-body p { margin: 0 0 .75rem 0; line-height: 1.45; }
+
+.expander-actions { display: flex; gap: .5rem; }
+.expander-actions .btn {
+  padding: .5rem .9rem;
+  border-radius: 10px;
+  background: #222;
+  border: 1px solid #333;
+  color: #eee;
+  text-decoration: none;
+}
+.expander-actions .btn:hover { background: #2a2a2a; }
+
+/* video */
+/* 统一控制展开正文里的视频尺寸：固定不超过容器与视口 */
+.exp-desc .video-embed {
+  /* 固定的“上限宽度”，但在小屏依然自适应：*/
+  width: clamp(280px, 90vw, 720px);
+  /* 限高，避免视频把展开区撑太高（60vh 可按需调整） */
+  max-height: 60vh;
+
+  /* 保持 16:9，尺寸由上面的宽/高约束共同决定 */
+  aspect-ratio: 16 / 9;
+
+  /* 外观与收纳 */
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.5rem 0 0.75rem;
+}
+
+/* 让视频永远“装进”容器，不裁切，不溢出 */
+.exp-desc .video-embed video,
+.exp-desc .video-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: contain; /* 关键：不裁切，按比例缩放到容器内 */
+}
