@@ -81,7 +81,7 @@
      <div class="tile-detail" style="display:none;">
        <p>Research Group: <a href="https://sites.google.com/usc.edu/roboland">RoboLAND</a></p>
        <p>Project Website: <a href="https://sites.google.com/view/diffusivegrain/home">DiffusiveGRAIN</a></p>
-       <p>Paper: <a href="https://arxiv.org/pdf/2505.12934d">Link</a></p>
+       <p>Paper: <a href="https://arxiv.org/pdf/2505.12934">Link</a></p>
        <p>Study of granular media manipulation via controlled avalanches to reposition embedded objects.</p>
        <ul>
          <li>Granular flow modeling</li>
