@@ -176,6 +176,26 @@
      </div>
   </div>
 
+  <!-- 300 Years From Now -->
+  <div class="tile">
+     <img src="../images/portfolio/2750.png" loading="lazy"/>
+     <div class="overlay">
+       <div class="overlay-inner">
+         <h3>300 Years From Now</h3>
+         <h5>2025</h5>
+         <p>An imagination of the future</p>
+       </div>
+     </div>
+     <div class="tile-detail" style="display:none;">
+       <p>A speculative visual essay exploring long-horizon civilizational design and human–AI collaboration.</p>
+       <ul>
+         <li>Worldbuilding sketches</li>
+         <li>Tech/social trade-offs</li>
+         <li>Short narrative vignettes</li>
+       </ul>
+     </div>
+  </div>
+
   <!-- Electric Guitar -->
   <div class="tile">
      <img src="../images/portfolio/elec_guitar.JPG" loading="lazy"/>
@@ -212,26 +232,6 @@
          <li>Signal processing & thresholds</li>
          <li>False positive reduction</li>
          <li>BLE alert prototype</li>
-       </ul>
-     </div>
-  </div>
-
-  <!-- 300 Years From Now -->
-  <div class="tile">
-     <img src="../images/portfolio/2750.png" loading="lazy"/>
-     <div class="overlay">
-       <div class="overlay-inner">
-         <h3>300 Years From Now</h3>
-         <h5>2025</h5>
-         <p>An imagination of the future</p>
-       </div>
-     </div>
-     <div class="tile-detail" style="display:none;">
-       <p>A speculative visual essay exploring long-horizon civilizational design and human–AI collaboration.</p>
-       <ul>
-         <li>Worldbuilding sketches</li>
-         <li>Tech/social trade-offs</li>
-         <li>Short narrative vignettes</li>
        </ul>
      </div>
   </div>
