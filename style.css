@@ -1,12 +1,8 @@
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
+/* 全局链接 */
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* 基础排版 */
 body {
   font-family: system-ui, sans-serif;
   max-width: 800px;
@@ -15,19 +11,20 @@ body {
   line-height: 1.6;
 }
 
+/* 导航：gap 需要 flex 才会生效 */
 nav {
-  margin-bottom: 0rem;
-  gap: 10.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;      /* 需要多大就调这里 */
+  margin-bottom: 0;
+  flex-wrap: wrap;
 }
-nav a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: #2563eb;
-}
-nav a:hover {
-  text-decoration: underline;
+nav a { color: #2563eb; }
+body.is-portfolio nav a {
+  color: #fff !important;
 }
 
+/* 代码块 */
 pre {
   background: #f6f8fa;
   padding: 0.75rem;
@@ -35,61 +32,186 @@ pre {
   overflow-x: auto;
 }
 
+/* 头像 */
 img.profile-photo {
-  width: 180px;        /* adjust size */
-  height: 180px;       /* keep square for circle */
-  object-fit: cover;   /* crop nicely */
-  border-radius: 10%;  /* circle */
-  display: block;
-  /* float: left; */
-  margin: 1rem 1rem 1rem 0;;   /* left aligned */
+  width: 180px; height: 180px; object-fit: cover;
+  border-radius: 10%;
+  display: block; margin: 1rem 1rem 1rem 0;
 }
 
-.pub-entry {
-  display: flex;            
-  align-items: flex-start; 
-  gap: 1rem;               
-  margin: 0.5rem 0;
+/* Publications */
+.pub-entry { display: flex; align-items: flex-start; gap: 1rem; margin: 0.5rem 0; }
+.pub-image { width: 200px; border-radius: 0; }
+.pub-text { flex: 1; line-height: 1; }
+.pub-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.1rem; }
+.pub-authors { font-size: 0.95rem; color: #555; margin-bottom: 0.1rem; }
+.pub-links a { margin-right: 12px; }
+
+/* 更新时间 */
+.last-update {
+  font-size: 0.85rem; color: #777; margin-top: 2rem;
+  text-align: right; font-style: italic;
 }
 
-.pub-image {
-  width: 200px;             
-  border-radius: 0px;
+/* Portfolio 专属背景（给 <html> 与 <body> 都加类，避免 margin 影响） */
+html.is-portfolio, body.is-portfolio { background: #000; }
+/* 若想在深色背景上让正文更亮一些（可选）： */
+/* body.is-portfolio { color: #e5e7eb; } */
+
+/* Portfolio page: make section titles/subtitles more visible on dark background */
+body.is-portfolio h1,
+body.is-portfolio h2 {
+  color: #fff;
 }
 
-.pub-text {
-  flex: 1;                 
-  line-height: 1;
+/* Center portfolio page main titles */
+body.is-portfolio h1 {
+  text-align: center;
 }
 
-.pub-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 0.01rem;
+/* Style for the portfolio hero and description */
+.portfolio-hero { text-align: center; margin-bottom: 0.75rem; }
+.portfolio-hero img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px; }
+.portfolio-desc { color: #fff; font-size: 0.95rem; max-width: 760px; margin: 0.5rem auto 1.5rem; }
+.portfolio-hero figcaption { font-size: 0.8rem; color: #e6eef8; margin-top: 0.25rem; }
+.portfolio-hero cite a { color: #e6eef8; text-decoration: underline; font-size: 0.8rem; }
+
+/* 三列正方形拼贴（GIF 可靠裁切） */
+.quilt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 2rem 0;
+}
+.tile {
+  position: relative; overflow: hidden;
+  border-radius: 0px; border: 0px solid #e5e7eb; background: #f6f8fa;
+}
+.tile::before { content: ""; display: block; padding-bottom: 100%; } /* 正方形占位 */
+.tile img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block; border: 0;
 }
 
-.pub-authors {
+/* Overlay that appears on hover */
+.tile .overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5); color: #fff; opacity: 0; transition: opacity 180ms ease;
+}
+.tile .overlay-inner { text-align: center; padding: 0 1rem; }
+.tile .overlay h3 {
+  margin: 0.1rem 0 0.1rem 0;   /* 底部只给一点点间距 */
+  font-size: 1.05rem;
+  line-height: normal;
+}
+
+.tile .overlay h5 {
+  margin: 0 0 0.3rem 0;         /* 上边贴近 h3，下边比 h3 多一些 */
   font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 0.01rem;
+  line-height: normal;
 }
 
-.pub-links a {
-  margin-right: 12px;
-  color: #2563eb;
+.tile .overlay p {
+  margin: 0.15rem 0;             /* 保持和 h5 的下边距协调 */
+  font-size: 0.9rem;
+  line-height: normal;
+}
+.tile:hover .overlay { opacity: 1; cursor: pointer; }
+.tile { cursor: pointer; }
+
+/* 展开卡片：占满一行，按内容高度过渡 */
+.tile-expander {
+  grid-column: 1 / -1;
+  background: #111;
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  overflow: hidden;
+  max-height: 0;            /* 初始为 0 */
+  opacity: 1;               /* 仅用高度过渡，更直观 */
+  transition: max-height .35s ease;
+  will-change: max-height;
+}
+.tile-expander.is-open {
+  /* 打开时的具体高度由 JS 设置为 scrollHeight，这里无需再写固定值 */
+}
+/* 内部布局 */
+.tile-expander .expander-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+/* 无媒体时用单列布局并隐藏媒体区 */
+.tile-expander.no-media .expander-inner {
+  grid-template-columns: 1fr;
+}
+.tile-expander.no-media .expander-media {
+  display: none;
+}
+@media (max-width: 720px){
+  .tile-expander .expander-inner { grid-template-columns: 1fr; }
+}
+/* 高亮当前被展开的 tile（与展开区颜色一致） */
+.tile.is-active { 
+  outline: 2px solid #2a2a2a;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* 高亮时让遮罩常显、颜色接近 .tile-expander 的背景 #111 */
+.tile.is-active .overlay {
+  opacity: 1;
+  background: rgba(17,17,17,.66);
+}
+
+/* 悬停时保持不变（避免抖动） */
+.tile.is-active:hover .overlay { opacity: 1; }
+.expander-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.expander-body h3 { margin: 0 0 .25rem 0; font-size: 1.15rem; }
+.expander-body .meta { margin: 0 0 .75rem 0; opacity: .7; }
+.expander-body p { margin: 0 0 .75rem 0; line-height: 1.45; }
+
+.expander-actions { display: flex; gap: .5rem; }
+.expander-actions .btn {
+  padding: .5rem .9rem;
+  border-radius: 10px;
+  background: #222;
+  border: 1px solid #333;
+  color: #eee;
   text-decoration: none;
 }
-.pub-links a:hover {
-  text-decoration: underline;
+.expander-actions .btn:hover { background: #2a2a2a; }
+
+/* video */
+/* 统一控制展开正文里的视频尺寸：固定不超过容器与视口 */
+.exp-desc .video-embed {
+  /* 固定的“上限宽度”，但在小屏依然自适应：*/
+  width: clamp(280px, 90vw, 720px);
+  /* 限高，避免视频把展开区撑太高（60vh 可按需调整） */
+  max-height: 60vh;
+
+  /* 保持 16:9，尺寸由上面的宽/高约束共同决定 */
+  aspect-ratio: 16 / 9;
+
+  /* 外观与收纳 */
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.5rem 0 0.75rem;
 }
 
-.last-update {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 2rem;
-  text-align: right;
-  font-style: italic;
+/* 让视频永远“装进”容器，不裁切，不溢出 */
+.exp-desc .video-embed video,
+.exp-desc .video-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: contain; /* 关键：不裁切，按比例缩放到容器内 */
 }
-
-
-

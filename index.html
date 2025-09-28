@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <title>Jerry Wu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=9">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav>
     <a href="#" onclick="loadPage('home.md')">Home</a>
     <a href="/files/CV.pdf" target="_blank">CV</a>
-    <!-- <a href="#" onclick="loadPage('Portfolio.md')">Portfolio</a> -->
-    <!-- <a href="#" onclick="loadPage('blog.md')">Blog</a> -->
+    <a href="#" onclick="loadPage('portfolio.md')">Portfolio</a>
+    <a href="#" onclick="loadPage('blog.md')">Blog</a>
   </nav>
 
   <main id="content">Loading...</main>
 
-  <!-- libs first, then your script; use defer so DOM 已就绪 -->
+  <!-- libs first, then your script; use defer so DOM  -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=9" defer></script>
 </body>
 </html>
