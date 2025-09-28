@@ -271,7 +271,7 @@
     </div>
   <div class="tile-detail" style="display:none;">
     <div class="video-embed">
-      <video controls playsinline preload="metadata" poster="../images/portfolio/sci_fi.png.png">
+      <video controls playsinline preload="metadata" poster="../images/portfolio/sci_fi.png">
         <!-- 用站点根路径最稳：按你的目录调整成 /videos/...  -->
         <source src="../videos/Space.mp4" type="video/mp4" />
         <!-- 可选：再提供 webm 以做兜底 -->
