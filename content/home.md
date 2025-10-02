@@ -1,3 +1,5 @@
+<!-- lastUpdated: 2025-09-30 -->
+
 <!-- # Welcome! -->
 
 <img src="../images/profile.jpg" alt="Profile photo"

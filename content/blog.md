@@ -1,3 +1,5 @@
+<!-- lastUpdated: 2025-09-30 -->
+
 # Blog
 
 - 2025-09-01 — Why I moved my Minecraft server off my laptop  

@@ -1,3 +1,5 @@
+<!-- lastUpdated: 2025-09-30 -->
+
 # Portfolio
 
 <figure class="portfolio-hero">

@@ -11,13 +11,21 @@ async function loadPage(file) {
     if (!res.ok) throw new Error(`${res.status} ${res.statusText} @ ${res.url}`);
 
     const md = await res.text();
+
+    // 提取手动更新时间（形如 <!-- lastUpdated: YYYY-MM-DD -->）
+    let manualDate = null;
+    const match = md.match(/<!--\s*lastUpdated:\s*([\d-]+)\s*-->/i);
+    if (match) manualDate = match[1]; // "2025-09-29"
+
     el.innerHTML = marked.parse(md);
 
     const isPortfolio = file.toLowerCase() === "portfolio.md";
     document.body.classList.toggle("is-portfolio", isPortfolio);
     document.documentElement.classList.toggle("is-portfolio", isPortfolio);
 
-    insertLastUpdate(el);
+    // 传入手动日期（如果没有，就 fallback 今天）
+    insertLastUpdate(el, manualDate);
+
     if (el.querySelector(".quilt")) initPortfolioInteractions(el);
   } catch (err) {
     el.innerHTML = `<p style="color:red;">Failed to load ${file}: ${err.message}</p>`;
@@ -25,12 +33,17 @@ async function loadPage(file) {
 }
 
 
-function insertLastUpdate(container) {
+
+function insertLastUpdate(container, dateString) {
   const footer = document.createElement("p");
   footer.className = "last-update";
-  footer.textContent = "Last updated: " + new Date().toLocaleDateString(
+
+  // 如果传了手动日期，就用它；否则默认今天
+  const date = dateString ? new Date(dateString) : new Date();
+  footer.textContent = "Last updated: " + date.toLocaleDateString(
     "en-US", { year: "numeric", month: "long", day: "numeric" }
   );
+
   container.appendChild(footer);
 }
 
