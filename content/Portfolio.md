@@ -170,6 +170,7 @@
      </div>
      <div class="tile-detail" style="display:none;">
        <p>Modern control on inverted pendulum: linearization, LQR, and reference tracking with integral action.</p>
+       <p>Code: <a href="https://github.com/thecleverbanana/InvertedCart">Github</a></p>
        <ul>
          <li>System ID & noise modeling</li>
          <li>LQR/LQG comparisons</li>
